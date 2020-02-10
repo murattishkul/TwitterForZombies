@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @zombie.name %>
+</p>
+
+<p>
+  <strong>Age:</strong> <%= @zombie.age %>
+<p>
+
+<p>
+  <strong>Bio:</strong><%= @zombie.bio %>
+</p>
+
+<p>
+  <strong>Email:</strong><%= @zombie.email %>
+</p>
+
+<p>
+  <strong>Rotting:</strong>
+  <% if @zombie.rotting %> 
+    <%= "YES" %>
+  <% else %>
+    <%= "NO" %>
+  <% end %>
+</p>
+
+<%= link_to 'Tweets', zombie_tweets_path(@zombie) %> |
+<%= link_to 'Edit', edit_zombie_path(@zombie) %> |
+<%= link_to 'Back', zombies_path %>

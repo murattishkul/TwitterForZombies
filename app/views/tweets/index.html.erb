@@ -1,0 +1,19 @@
+<h1>Listing Tweets</h1>
+
+<table>
+    <tr>
+        <th>Status</th>
+        <th>Zombie</th>
+    </tr>
+    <% @tweets.each do |tweet|%>
+      <tr>
+        <td><%= tweet.status %></td>
+        <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+        <td><%= link_to 'Edit', edit_zombie_tweet_path(@zombie, tweet) %></td>
+        <td><%= link_to 'Destroy', [@zombie, tweet], method: :delete, data: { confirm: "Are you sure? " } %></td>      
+      </tr>
+    <% end %>
+</table>
+
+<%= link_to 'New Tweet', new_zombie_tweet_path %>
+
